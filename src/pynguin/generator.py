@@ -72,6 +72,7 @@ from pynguin.utils.report import render_coverage_report
 from pynguin.utils.report import render_xml_coverage_report
 from pynguin.utils.statistics.runtimevariable import RuntimeVariable
 
+from pynguin.reducer.reducing_module import Reducer
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -208,6 +209,11 @@ def _setup_random_number_generator() -> None:
     randomness.RNG.seed(config.configuration.seeding.seed)
 
 
+def _setup_reducer_module() -> None:
+    """Setup Reducer."""
+    _LOGGER.info(f"Reducer:     %s", config.configuration.reducing.reducer_module)
+
+
 def _setup_constant_seeding() -> tuple[ConstantProvider, DynamicConstantProvider | None]:
     """Collect constants from SUT, if enabled."""
     # Use empty provider by default.
@@ -280,6 +286,7 @@ def _setup_and_check() -> tuple[TestCaseExecutor, ModuleTestCluster, ConstantPro
         )
     _track_sut_data(tracer, test_cluster)
     _setup_random_number_generator()
+    _setup_reducer_module()
 
     # Detect which LLM strategy is used
     stat.track_output_variable(RuntimeVariable.LLMStrategy, _detect_llm_strategy())
@@ -567,6 +574,24 @@ def _run() -> ReturnCode:
             datetime.datetime.now(),  # noqa: DTZ005
         )
     _collect_miscellaneous_statistics(test_cluster)
+
+    if config.configuration.reducing.reducer_module:
+        module_name = config.configuration.module_name.replace(".", "_")
+        file_name_suffix: str = ""
+
+        target_path = (Path(config.configuration.project_path).resolve()) / f"{module_name}{file_name_suffix}.py"
+
+        target_file = (
+            Path(config.configuration.test_case_output.output_path).resolve()
+            / f"test_{module_name}{file_name_suffix}.py"
+        )
+
+        _run_reducer(
+            target_path,
+            target_file,
+            _LOGGER
+        )
+
     if not stat.write_statistics():
         _LOGGER.error("Failed to write statistics data")
     if generation_result.size() == 0:
@@ -797,3 +822,12 @@ def _export_chromosome(
         format_with_black=config.configuration.test_case_output.format_with_black,
     )
     _LOGGER.info("Written %i test cases to %s", chromosome.size(), target_file)
+
+
+def _run_reducer(target_path, path_for_result: Path, logger) -> None:
+    try:
+        _LOGGER.info("Start Reducing…")
+        reducer = Reducer(target_path, path_for_result, logger)
+        reducer.reduce()
+    finally:
+        _LOGGER.info("Stop Reducing…")

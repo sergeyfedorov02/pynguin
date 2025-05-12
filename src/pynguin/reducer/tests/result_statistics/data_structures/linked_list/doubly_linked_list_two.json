@@ -1,0 +1,62 @@
+{
+    "original_tree_tests_count": 28,
+    "reducing_tree_tests_count": 14,
+    "functions_stats": {
+        "test_case_0": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_4": {
+            "original_test_lines": 12,
+            "reducing_test_lines": 4
+        },
+        "test_case_5": {
+            "original_test_lines": 13,
+            "reducing_test_lines": 12
+        },
+        "test_case_6": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 2
+        },
+        "test_case_7": {
+            "original_test_lines": 6,
+            "reducing_test_lines": 2
+        },
+        "test_case_12": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_15": {
+            "original_test_lines": 19,
+            "reducing_test_lines": 11
+        },
+        "test_case_17": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 5
+        },
+        "test_case_20": {
+            "original_test_lines": 9,
+            "reducing_test_lines": 9
+        },
+        "test_case_22": {
+            "original_test_lines": 17,
+            "reducing_test_lines": 12
+        },
+        "test_case_23": {
+            "original_test_lines": 14,
+            "reducing_test_lines": 13
+        },
+        "test_case_24": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 9
+        },
+        "test_case_26": {
+            "original_test_lines": 25,
+            "reducing_test_lines": 14
+        },
+        "test_case_27": {
+            "original_test_lines": 9,
+            "reducing_test_lines": 9
+        }
+    }
+}

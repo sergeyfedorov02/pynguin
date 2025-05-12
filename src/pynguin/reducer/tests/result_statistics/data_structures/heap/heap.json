@@ -1,0 +1,38 @@
+{
+    "original_tree_tests_count": 15,
+    "reducing_tree_tests_count": 8,
+    "functions_stats": {
+        "test_case_1": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 6
+        },
+        "test_case_2": {
+            "original_test_lines": 10,
+            "reducing_test_lines": 4
+        },
+        "test_case_4": {
+            "original_test_lines": 28,
+            "reducing_test_lines": 5
+        },
+        "test_case_5": {
+            "original_test_lines": 5,
+            "reducing_test_lines": 5
+        },
+        "test_case_9": {
+            "original_test_lines": 25,
+            "reducing_test_lines": 13
+        },
+        "test_case_11": {
+            "original_test_lines": 20,
+            "reducing_test_lines": 12
+        },
+        "test_case_12": {
+            "original_test_lines": 10,
+            "reducing_test_lines": 8
+        },
+        "test_case_13": {
+            "original_test_lines": 17,
+            "reducing_test_lines": 14
+        }
+    }
+}

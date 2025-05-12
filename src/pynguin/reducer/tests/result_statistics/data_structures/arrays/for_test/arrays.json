@@ -1,0 +1,38 @@
+{
+    "original_tree_tests_count": 10,
+    "reducing_tree_tests_count": 7,
+    "original_tokens": 65,
+    "reducing_tokens": 51,
+    "llm_reducing_tokens": 38,
+    "functions_stats": {
+        "test_case_3": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_4": {
+            "original_test_lines": 9,
+            "reducing_test_lines": 7
+        },
+        "test_case_5": {
+            "original_test_lines": 16,
+            "reducing_test_lines": 11
+        },
+        "test_case_6": {
+            "original_test_lines": 9,
+            "reducing_test_lines": 9
+        },
+        "test_case_7": {
+            "original_test_lines": 12,
+            "reducing_test_lines": 8
+        },
+        "test_case_8": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 8
+        },
+        "test_case_9": {
+            "original_test_lines": 5,
+            "reducing_test_lines": 5
+        }
+    },
+    "time_to_reduce": 351.57
+}

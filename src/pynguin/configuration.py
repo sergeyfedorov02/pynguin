@@ -174,6 +174,11 @@ class Selection(str, enum.Enum):
 
 
 @dataclasses.dataclass
+class ReducerConfiguration:
+    reducer_module: bool = False
+
+
+@dataclasses.dataclass
 class StatisticsOutputConfiguration:
     """Configuration related to output."""
 
@@ -700,6 +705,10 @@ class Configuration:
 
     subprocess: bool = False
     """Run the test generation in a subprocess."""
+
+    reducing: ReducerConfiguration = dataclasses.field(
+        default_factory=ReducerConfiguration
+    )
 
 
 # Singleton instance of the configuration.

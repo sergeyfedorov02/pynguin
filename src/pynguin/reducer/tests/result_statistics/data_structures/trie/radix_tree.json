@@ -1,0 +1,30 @@
+{
+    "original_tree_tests_count": 15,
+    "reducing_tree_tests_count": 6,
+    "functions_stats": {
+        "test_case_3": {
+            "original_test_lines": 15,
+            "reducing_test_lines": 3
+        },
+        "test_case_8": {
+            "original_test_lines": 20,
+            "reducing_test_lines": 13
+        },
+        "test_case_10": {
+            "original_test_lines": 33,
+            "reducing_test_lines": 4
+        },
+        "test_case_11": {
+            "original_test_lines": 18,
+            "reducing_test_lines": 13
+        },
+        "test_case_13": {
+            "original_test_lines": 13,
+            "reducing_test_lines": 11
+        },
+        "test_case_14": {
+            "original_test_lines": 18,
+            "reducing_test_lines": 15
+        }
+    }
+}

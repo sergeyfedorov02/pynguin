@@ -1,0 +1,50 @@
+{
+    "original_tree_tests_count": 18,
+    "reducing_tree_tests_count": 11,
+    "functions_stats": {
+        "test_case_2": {
+            "original_test_lines": 8,
+            "reducing_test_lines": 1
+        },
+        "test_case_4": {
+            "original_test_lines": 8,
+            "reducing_test_lines": 1
+        },
+        "test_case_5": {
+            "original_test_lines": 21,
+            "reducing_test_lines": 1
+        },
+        "test_case_7": {
+            "original_test_lines": 19,
+            "reducing_test_lines": 1
+        },
+        "test_case_8": {
+            "original_test_lines": 8,
+            "reducing_test_lines": 8
+        },
+        "test_case_11": {
+            "original_test_lines": 25,
+            "reducing_test_lines": 13
+        },
+        "test_case_12": {
+            "original_test_lines": 28,
+            "reducing_test_lines": 12
+        },
+        "test_case_14": {
+            "original_test_lines": 20,
+            "reducing_test_lines": 1
+        },
+        "test_case_15": {
+            "original_test_lines": 45,
+            "reducing_test_lines": 11
+        },
+        "test_case_16": {
+            "original_test_lines": 39,
+            "reducing_test_lines": 27
+        },
+        "test_case_17": {
+            "original_test_lines": 49,
+            "reducing_test_lines": 45
+        }
+    }
+}

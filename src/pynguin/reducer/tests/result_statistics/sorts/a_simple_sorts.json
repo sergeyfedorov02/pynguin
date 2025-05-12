@@ -1,0 +1,98 @@
+{
+    "original_tree_tests_count": 42,
+    "reducing_tree_tests_count": 23,
+    "functions_stats": {
+        "test_case_0": {
+            "original_test_lines": 19,
+            "reducing_test_lines": 4
+        },
+        "test_case_5": {
+            "original_test_lines": 6,
+            "reducing_test_lines": 5
+        },
+        "test_case_6": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 2
+        },
+        "test_case_7": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_15": {
+            "original_test_lines": 7,
+            "reducing_test_lines": 1
+        },
+        "test_case_18": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_19": {
+            "original_test_lines": 4,
+            "reducing_test_lines": 4
+        },
+        "test_case_20": {
+            "original_test_lines": 5,
+            "reducing_test_lines": 5
+        },
+        "test_case_23": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_24": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_25": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_26": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_27": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_28": {
+            "original_test_lines": 16,
+            "reducing_test_lines": 7
+        },
+        "test_case_29": {
+            "original_test_lines": 5,
+            "reducing_test_lines": 2
+        },
+        "test_case_30": {
+            "original_test_lines": 21,
+            "reducing_test_lines": 10
+        },
+        "test_case_32": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        },
+        "test_case_33": {
+            "original_test_lines": 23,
+            "reducing_test_lines": 7
+        },
+        "test_case_37": {
+            "original_test_lines": 29,
+            "reducing_test_lines": 3
+        },
+        "test_case_38": {
+            "original_test_lines": 19,
+            "reducing_test_lines": 5
+        },
+        "test_case_39": {
+            "original_test_lines": 26,
+            "reducing_test_lines": 12
+        },
+        "test_case_40": {
+            "original_test_lines": 3,
+            "reducing_test_lines": 3
+        },
+        "test_case_41": {
+            "original_test_lines": 2,
+            "reducing_test_lines": 2
+        }
+    }
+}

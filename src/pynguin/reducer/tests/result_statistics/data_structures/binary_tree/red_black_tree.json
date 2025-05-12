@@ -1,0 +1,98 @@
+{
+    "original_tree_tests_count": 74,
+    "reducing_tree_tests_count": 23,
+    "functions_stats": {
+        "test_case_2": {
+            "original_test_lines": 10,
+            "reducing_test_lines": 10
+        },
+        "test_case_30": {
+            "original_test_lines": 25,
+            "reducing_test_lines": 16
+        },
+        "test_case_34": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 11
+        },
+        "test_case_38": {
+            "original_test_lines": 27,
+            "reducing_test_lines": 9
+        },
+        "test_case_50": {
+            "original_test_lines": 75,
+            "reducing_test_lines": 13
+        },
+        "test_case_52": {
+            "original_test_lines": 55,
+            "reducing_test_lines": 36
+        },
+        "test_case_53": {
+            "original_test_lines": 64,
+            "reducing_test_lines": 10
+        },
+        "test_case_54": {
+            "original_test_lines": 55,
+            "reducing_test_lines": 12
+        },
+        "test_case_56": {
+            "original_test_lines": 100,
+            "reducing_test_lines": 22
+        },
+        "test_case_57": {
+            "original_test_lines": 31,
+            "reducing_test_lines": 8
+        },
+        "test_case_59": {
+            "original_test_lines": 85,
+            "reducing_test_lines": 67
+        },
+        "test_case_62": {
+            "original_test_lines": 29,
+            "reducing_test_lines": 14
+        },
+        "test_case_63": {
+            "original_test_lines": 50,
+            "reducing_test_lines": 38
+        },
+        "test_case_64": {
+            "original_test_lines": 58,
+            "reducing_test_lines": 11
+        },
+        "test_case_65": {
+            "original_test_lines": 75,
+            "reducing_test_lines": 30
+        },
+        "test_case_66": {
+            "original_test_lines": 93,
+            "reducing_test_lines": 15
+        },
+        "test_case_67": {
+            "original_test_lines": 86,
+            "reducing_test_lines": 45
+        },
+        "test_case_68": {
+            "original_test_lines": 89,
+            "reducing_test_lines": 22
+        },
+        "test_case_69": {
+            "original_test_lines": 107,
+            "reducing_test_lines": 82
+        },
+        "test_case_70": {
+            "original_test_lines": 98,
+            "reducing_test_lines": 20
+        },
+        "test_case_71": {
+            "original_test_lines": 98,
+            "reducing_test_lines": 27
+        },
+        "test_case_72": {
+            "original_test_lines": 103,
+            "reducing_test_lines": 23
+        },
+        "test_case_73": {
+            "original_test_lines": 100,
+            "reducing_test_lines": 27
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "original_tree_tests_count": 7,
+    "reducing_tree_tests_count": 2,
+    "functions_stats": {
+        "test_case_0": {
+            "original_test_lines": 11,
+            "reducing_test_lines": 6
+        },
+        "test_case_5": {
+            "original_test_lines": 6,
+            "reducing_test_lines": 4
+        }
+    }
+}
