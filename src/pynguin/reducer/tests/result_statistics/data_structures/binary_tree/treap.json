@@ -1,6 +1,9 @@
 {
     "original_tree_tests_count": 17,
     "reducing_tree_tests_count": 14,
+	"total_original_tokens": 275,
+    "original_tokens": 250,
+    "reducing_tokens": 133,
     "functions_stats": {
         "test_case_1": {
             "original_test_lines": 32,

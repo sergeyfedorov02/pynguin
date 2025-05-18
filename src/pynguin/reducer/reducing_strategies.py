@@ -431,7 +431,8 @@ def try_create_ast(file_path):
     }
 
 
-def run_reduce(target_file_path: Path, file_with_tests_path: Path, original_coverage_report, logger, time_to_run):
+def run_reduce(target_file_path: Path, file_with_tests_path: Path, original_coverage_report, openrouter_api_key, logger,
+               time_to_run):
     # Получим AST структуру
     creating_ast_structure = try_create_ast(file_with_tests_path)
     overall_tree = creating_ast_structure["ast_tree"]
@@ -515,22 +516,30 @@ def run_reduce(target_file_path: Path, file_with_tests_path: Path, original_cove
 
     # Взаимодействие с LLM
     logger.info(f"Application of LLM...")
-    try:
-        reducing_with_llm(
-            target_file_path=target_file_path,
-            reducing_tests_path=reducing_tests_path,
-            original_cov_report=original_coverage_report,
-            time_to_run=time_to_run
-        )
-        logger.info(f"Interaction with LLM was successful")
-    except ValueError:
-        logger.info(f"Interaction with LLM was NOT successful")
-        pass
+    if len(openrouter_api_key) == 0:
+        logger.info(f"OpenRouter API key was not specified!")
+    else:
+        logger.info(f"API key = {openrouter_api_key}")
+        try:
+            llm_result = reducing_with_llm(
+                target_file_path=target_file_path,
+                reducing_tests_path=reducing_tests_path,
+                original_cov_report=original_coverage_report,
+                openrouter_api_key=openrouter_api_key,
+                time_to_run=time_to_run
+            )
+            if llm_result:
+                logger.info(f"Interaction with LLM was successful")
+            else:
+                logger.info(f"Interaction with LLM was NOT successful")
+        except ValueError:
+            logger.info(f"Interaction with LLM was NOT successful")
+            pass
 
     remove_pyc_and_cache(reducing_tests_path)
 
 
-def reducing_with_llm(target_file_path, reducing_tests_path, original_cov_report, time_to_run):
+def reducing_with_llm(target_file_path, reducing_tests_path, original_cov_report, openrouter_api_key, time_to_run):
     llm_reducing_tests_path = reducing_tests_path.parent / f"llm_{reducing_tests_path.name}"
 
     with target_file_path.open("r", encoding="utf-8") as f:
@@ -541,7 +550,7 @@ def reducing_with_llm(target_file_path, reducing_tests_path, original_cov_report
 
     for i in range(3):
         try:
-            response = make_request_llm(target_file_code, reducing_file_code)
+            response = make_request_llm(target_file_code, reducing_file_code, openrouter_api_key)
         except requests.RequestException:
             pass
             continue
@@ -605,8 +614,7 @@ def check_coverage_after_llm_reducing(target_file_path, original_cov_report, llm
     return is_acceptable
 
 
-def make_request_llm(target_code, reducing_code):
-    api_key = "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"
+def make_request_llm(target_code, reducing_code, api_key):
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -663,6 +671,11 @@ def get_reducing_raw_stats(original_tests_file_path, reducing_tests_file_path):
     original_tree = try_create_ast(original_tests_file_path)["ast_tree"]
     reducing_tree = try_create_ast(reducing_tests_file_path)["ast_tree"]
 
+    total_original_tokens = 0
+    for node in ast.iter_child_nodes(original_tree):
+        if isinstance(node, ast.FunctionDef):
+            total_original_tokens += count_lines(node.body)
+
     original_tree_tests_count = sum(1 for node in ast.walk(original_tree) if isinstance(node, ast.FunctionDef))
     reducing_tree_tests_count = 0
 
@@ -686,6 +699,7 @@ def get_reducing_raw_stats(original_tests_file_path, reducing_tests_file_path):
         "original_tree_tests_count": original_tree_tests_count,
         "reducing_tree_tests_count": reducing_tree_tests_count,
         "functions_stats": functions_stats,
+        "total_original_tokens": total_original_tokens,
     }
 
 

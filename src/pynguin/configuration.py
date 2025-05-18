@@ -179,6 +179,11 @@ class ReducerConfiguration:
 
 
 @dataclasses.dataclass
+class OpenrouterConfiguration:
+    openrouter_api_key: str = ""
+
+
+@dataclasses.dataclass
 class StatisticsOutputConfiguration:
     """Configuration related to output."""
 
@@ -708,6 +713,10 @@ class Configuration:
 
     reducing: ReducerConfiguration = dataclasses.field(
         default_factory=ReducerConfiguration
+    )
+
+    openrouter: OpenrouterConfiguration = dataclasses.field(
+        default_factory=OpenrouterConfiguration
     )
 
 

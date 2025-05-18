@@ -586,9 +586,12 @@ def _run() -> ReturnCode:
             / f"test_{module_name}{file_name_suffix}.py"
         )
 
+        openrouter_api_key = config.configuration.openrouter.openrouter_api_key
+
         _run_reducer(
             target_path,
             target_file,
+            openrouter_api_key,
             _LOGGER
         )
 
@@ -824,10 +827,10 @@ def _export_chromosome(
     _LOGGER.info("Written %i test cases to %s", chromosome.size(), target_file)
 
 
-def _run_reducer(target_path, path_for_result: Path, logger) -> None:
+def _run_reducer(target_path, path_for_result: Path, openrouter_api_key, logger) -> None:
     try:
         _LOGGER.info("Start Reducing…")
-        reducer = Reducer(target_path, path_for_result, logger)
+        reducer = Reducer(target_path, path_for_result, openrouter_api_key, logger)
         reducer.reduce()
     finally:
         _LOGGER.info("Stop Reducing…")

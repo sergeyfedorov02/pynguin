@@ -37,6 +37,7 @@ def calculate_total_tokens(data, reducing_file_path):
     new_data = {
         "original_tree_tests_count": data["original_tree_tests_count"],
         "reducing_tree_tests_count": data["reducing_tree_tests_count"],
+        "total_original_tokens": data["total_original_tokens"],
         "original_tokens": original_tokens,
         "reducing_tokens": reducing_tokens,
         "llm_reducing_tokens": llm_reducing_tokens,
@@ -121,8 +122,18 @@ class TestReducingModule(unittest.TestCase):
     def test_file_processing(self):
         # source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'hashing' / 'for_test'
         # source_dir = Path(__file__).resolve().parent / 'source' / 'graphs' / 'for_test'
-        source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'arrays' / 'for_test'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'arrays' / 'for_test'
         # source_dir = Path(__file__).resolve().parent / 'source'
+
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'sorts' / 'for_test'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'sorts' / 'for_test2'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'dynamic_programming' / 'for_test'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'graphs' / 'for_test2'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'heap' / 'for_test'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'heap' / 'for_test2'
+        # source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'binary_tree' / 'for_test'
+
+        source_dir = Path(__file__).resolve().parent / 'source' / 'data_structures' / 'binary_tree' / 'for_test'
 
         # Проходим по всем файлам в source
         for file_path in find_files(source_dir):

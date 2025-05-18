@@ -8,12 +8,14 @@ import time
 
 
 class Reducer:
-    def __init__(self, target_file, path_for_result, logger):
+    def __init__(self, target_file, path_for_result, openrouter_api_key, logger):
         self.target_file = target_file
         self.path_for_result = path_for_result
+        self.openrouter_api_key = openrouter_api_key
         self.logger = logger
 
     def reduce(self):
+        # self.path_for_result = Path("D:\\PycharmProjects\\pynguin\\src\\pynguin\\reducer\\tests\\results\\django\\test\\test_console.py")
         copy_target_file_path, flag_bad_name = create_reducing_env(self.target_file, self.path_for_result)
 
         start_time = time.time()
@@ -24,7 +26,7 @@ class Reducer:
         print_stats_without_branches(self.logger, original_cov_stat)
 
         start_time = time.time()
-        _reduce(copy_target_file_path, self.path_for_result, original_cov_stat, self.logger, initial_time)
+        _reduce(copy_target_file_path, self.path_for_result, original_cov_stat, self.openrouter_api_key, self.logger, initial_time)
         time_to_reduce = time.time() - start_time
 
         _print_reducing_stats(self.path_for_result, self.logger, time_to_reduce)
@@ -39,10 +41,10 @@ def _get_coverage(target_file: Path, path_for_result: Path, logger):
         logger.exception(f"Error: {e}")
 
 
-def _reduce(target_file: Path, path_for_result: Path, coverage_statistic, logger, original_run_time):
+def _reduce(target_file: Path, path_for_result: Path, coverage_statistic, openrouter_api_key, logger, original_run_time):
     max_run_time = original_run_time + 1
     try:
-        run_reduce(target_file, path_for_result, coverage_statistic, logger, max_run_time)
+        run_reduce(target_file, path_for_result, coverage_statistic, openrouter_api_key, logger, max_run_time)
     except Exception as e:
         logger.exception(f"Error: {e}")
 
